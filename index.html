@@ -50,7 +50,10 @@
     <section id="step-1" class="story-step active" data-step="1">
       <div class="card-glow-shell">
         <div class="text-content">
-          <p class="whisper-title">saubhuuuu 🌙</p>
+          <p class="whisper-title animated-name">
+            <span class="name-shimmer">saubhuuuu</span>
+            <span class="moon-icon">🌙</span>
+          </p>
           <h1 class="headline-text">this isn't a birthday wish.</h1>
         </div>
         <div class="action-wrap">
@@ -183,10 +186,20 @@
             </p>
           </div>
           <div class="letter-signoff">
-            <span class="signoff-quote">warmest wishes,</span>
-            <span class="signoff-name">— someone who spent way too long coding this website :)</span>
+            <span class="signoff-quote">warm wish</span>
+            <span class="signoff-name">from george</span>
           </div>
         </article>
+
+        <!-- Interactive Birthday Compliments Generator -->
+        <div class="compliment-station">
+          <button id="compliment-btn" class="glow-btn mini-btn compliment-btn" type="button">
+            <span>💌 tap for a mini note</span>
+          </button>
+          <div id="compliment-wrap" class="compliment-wrap hidden">
+            <p id="compliment-display" class="compliment-text"></p>
+          </div>
+        </div>
 
         <!-- Extra Celebration Controls -->
         <div class="reveal-actions">
