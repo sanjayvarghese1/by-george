@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Saubhuuuu ✨</title>
+  <meta name="description" content="A secret birthday transmission for Saubhuuuu.">
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Space Canvas & Glowing Aura -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- Background Music Audio Tag -->
+  <audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+
+  <!-- Top Floating Music Pill -->
+  <header class="top-nav">
+    <div class="brand-pill">
+      <span class="status-indicator"></span>
+      <span class="brand-name">for saubhuuuu ✦</span>
+    </div>
+    <button id="music-toggle" class="music-pill" aria-label="Toggle background music">
+      <span class="music-icon">🎵</span>
+      <span class="sound-wave">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </span>
+      <span id="music-status-text" class="music-label">music off</span>
+    </button>
+  </header>
+
+  <!-- Main Narrative Viewport -->
+  <main class="viewport-frame">
+    
+    <!-- STEP 1: The Intrigue -->
+    <section id="step-1" class="story-step active" data-step="1">
+      <div class="card-glow-shell">
+        <div class="step-badge">step 01</div>
+        <div class="text-content">
+          <p class="whisper-title">saubhuuuu 🌙</p>
+          <h1 class="headline-text">this isn't a birthday wish.</h1>
+        </div>
+        <div class="action-wrap">
+          <button class="glow-btn next-btn" data-target="2" id="btn-step-1">
+            <span>tell me why</span>
+            <span class="btn-arrow">↓</span>
+          </button>
+        </div>
+        <p class="tip-text">press <kbd>space</kbd> or click to continue</p>
+      </div>
+    </section>
+
+    <!-- STEP 2: The Confession -->
+    <section id="step-2" class="story-step" data-step="2">
+      <div class="card-glow-shell">
+        <div class="step-badge">step 02</div>
+        <div class="text-content">
+          <p class="body-intro">it's just a little reminder that someone thought</p>
+          <div class="quote-box">
+            <span class="quote-deco">“</span>
+            <p class="quote-text">
+              let me make something<br>
+              <span class="gold-gradient-text">stupidly complicated</span>
+            </p>
+            <span class="quote-deco end">”</span>
+          </div>
+          <p class="body-sub">instead of simply sending a boring two-word text 🤦‍♂️</p>
+        </div>
+        <div class="action-wrap">
+          <button class="glow-btn next-btn" data-target="3" id="btn-step-2">
+            <span>okay, and?</span>
+            <span class="btn-arrow">↓</span>
+          </button>
+        </div>
+        <p class="tip-text">press <kbd>space</kbd> to continue</p>
+      </div>
+    </section>
+
+    <!-- STEP 3: The Runaway Gift Box Prank -->
+    <section id="step-3" class="story-step" data-step="3">
+      <div class="card-glow-shell arena-card">
+        <div class="step-badge">step 03</div>
+        <div class="text-content">
+          <p class="whisper-title">wait... 👀</p>
+          <h2 class="headline-text">i actually got you a gift.</h2>
+          <p class="sub-lead">it's right here. click to open it 🎁</p>
+        </div>
+
+        <!-- Runaway Arena -->
+        <div class="gift-arena">
+          <div class="runaway-track" id="runaway-wrapper">
+            <button id="runaway-gift-btn" class="glow-btn gift-box-btn" type="button">
+              <span class="btn-emoji">🎁</span>
+              <span>claim your gift</span>
+            </button>
+          </div>
+          
+          <p id="gift-taunt-text" class="dodge-taunt"></p>
+
+          <div id="give-up-container" class="give-up-box hidden">
+            <p class="give-up-hint">looks like that box is too fast for you... 😜</p>
+            <button id="give-up-btn" class="glow-btn unlock-btn next-btn" data-target="4">
+              <span>fine, reveal the real gift ✨</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: The Grand Reveal Screen -->
+    <section id="step-4" class="story-step reveal-step" data-step="4">
+      <div class="reveal-content-box">
+        
+        <!-- Screen Flash Effect -->
+        <div id="flash-overlay" class="flash-overlay"></div>
+
+        <!-- The "I Am The Gift" Punchline Card -->
+        <div class="gift-punchline-card">
+          <div class="punchline-badge">OFFICIAL BIRTHDAY PRESENT</div>
+          <h2 class="punchline-heading">
+            SURPRISE... <span class="gold-gradient-text">I AM THE GIFT!</span> 🎁
+          </h2>
+          <p class="punchline-sub">
+            Limited edition. No returns, no exchanges, and you're stuck with me. You're welcome! 😎✨
+          </p>
+        </div>
+
+        <!-- Celebration Title -->
+        <div class="birthday-hero">
+          <span class="hero-tag">TODAY IS SPECIAL</span>
+          <h1 class="hero-title shimmer-text">
+            HAPPY BIRTHDAY, SAUBHUUUU! 🎂✨
+          </h1>
+        </div>
+
+        <!-- Interactive Birthday Candle -->
+        <div class="candle-section" id="wish-station">
+          <div class="candle-holder" id="candle-trigger" role="button" tabindex="0" title="Click flame to blow it out and make a wish!">
+            <div class="flame" id="candle-flame">
+              <div class="flame-sparkle"></div>
+            </div>
+            <div class="wick"></div>
+            <div class="wax">
+              <div class="wax-stripe"></div>
+            </div>
+          </div>
+          <p class="candle-instruction" id="wish-instruction">
+            ✨ tap the candle flame to blow it out & make a wish!
+          </p>
+          <p class="candle-granted hidden" id="wish-granted">
+            🌟 <strong>wish made!</strong> may every single dream of yours come true this year.
+          </p>
+        </div>
+
+        <!-- The Heartfelt Unlocked Letter -->
+        <article class="letter-card">
+          <div class="letter-stamp">✦</div>
+          <div class="letter-meta">
+            <span class="meta-to">To: Saubhuuuu 💌</span>
+            <span class="meta-date">A Special Day</span>
+          </div>
+          <div class="letter-body">
+            <p class="greeting">dear <strong>saubhuuuu</strong>,</p>
+            <p>
+              Happy Birthday! I hope your day is filled with your absolute favorite food, countless laughs, zero stress, and all the little moments that make you genuinely happy.
+            </p>
+            <p>
+              You have this effortless way of bringing warmth and comfort wherever you go. I hope this year brings you everything you've been working toward, with plenty of peace and adventure along the way.
+            </p>
+            <p>
+              Keep being your wonderful self. And please make sure you eat an extra large slice of cake today! 🍰
+            </p>
+          </div>
+          <div class="letter-signoff">
+            <span class="signoff-quote">warmest wishes,</span>
+            <span class="signoff-name">— someone who spent way too long coding this website :)</span>
+          </div>
+        </article>
+
+        <!-- Extra Celebration Controls -->
+        <div class="reveal-actions">
+          <button id="confetti-btn" class="glow-btn mini-btn">
+            <span>🎉 shower more confetti</span>
+          </button>
+          <button id="replay-btn" class="ghost-btn mini-btn">
+            <span>↺ start from beginning</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
