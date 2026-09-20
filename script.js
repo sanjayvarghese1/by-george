@@ -138,14 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (musicToggle) {
+    if (musicToggle) {
     musicToggle.addEventListener('click', (e) => {
       e.stopPropagation();
       toggleMusic();
     });
   }
 
-  // Autoplay music upon first user interaction
+  // Attempt instant autoplay immediately on page load
+  playMusic();
+
+  // Also bind to any early interaction if browser requires a gesture
   function startMusicOnFirstInteraction() {
     if (!isPlayingMusic) {
       playMusic();
@@ -153,11 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.removeEventListener('click', startMusicOnFirstInteraction);
     window.removeEventListener('keydown', startMusicOnFirstInteraction);
     window.removeEventListener('touchstart', startMusicOnFirstInteraction);
+    window.removeEventListener('pointerdown', startMusicOnFirstInteraction);
   }
 
   window.addEventListener('click', startMusicOnFirstInteraction, { once: true });
   window.addEventListener('keydown', startMusicOnFirstInteraction, { once: true });
   window.addEventListener('touchstart', startMusicOnFirstInteraction, { once: true });
+  window.addEventListener('pointerdown', startMusicOnFirstInteraction, { once: true });
 
   // ---------------------------------------------------------------------------
   // 4. STEP TRANSITION LOGIC
