@@ -347,6 +347,80 @@ html, body {
   animation: gentlePulseGlow 3s ease-in-out infinite;
 }
 
+/* Animated Saubhuuuu Hero Name on Step 1 */
+.animated-name {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.name-shimmer {
+  font-family: var(--font-sans);
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffd166 22%,
+    #f72585 45%,
+    #4cc9f0 70%,
+    #ffd166 88%,
+    #ffffff 100%
+  );
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerFlow 4.5s linear infinite, floatBreath 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 24px rgba(255, 209, 102, 0.5));
+  display: inline-block;
+}
+
+.moon-icon {
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  display: inline-block;
+  animation: moonWobble 2.8s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 16px rgba(255, 209, 102, 0.55));
+}
+
+@keyframes shimmerFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 240% 50%; }
+}
+
+@keyframes floatBreath {
+  0% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 15px rgba(255, 209, 102, 0.5));
+  }
+  33% {
+    transform: translateY(-8px) scale(1.08) rotate(-2deg);
+    filter: drop-shadow(0 0 35px rgba(247, 37, 133, 0.8));
+  }
+  66% {
+    transform: translateY(-4px) scale(1.04) rotate(2deg);
+    filter: drop-shadow(0 0 25px rgba(76, 201, 240, 0.8));
+  }
+  100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 15px rgba(255, 209, 102, 0.5));
+  }
+}
+
+@keyframes moonWobble {
+  0% {
+    transform: rotate(-10deg) translateY(0);
+  }
+  50% {
+    transform: rotate(14deg) translateY(-8px) scale(1.15);
+  }
+  100% {
+    transform: rotate(-6deg) translateY(0);
+  }
+}
+
 .headline-text {
   font-size: clamp(2.2rem, 5.5vw, 3.4rem);
   font-weight: 600;
@@ -669,6 +743,40 @@ kbd {
   font-size: 0.98rem;
   color: var(--text-dim);
   margin-top: 0.4rem;
+}
+
+/* Birthday Compliment Station */
+.compliment-station {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 540px;
+}
+
+.compliment-btn {
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.18), rgba(247, 37, 133, 0.18));
+  border-color: rgba(255, 209, 102, 0.35);
+}
+
+.compliment-wrap {
+  margin-top: 1rem;
+  padding: 1.2rem 1.8rem;
+  background: rgba(255, 209, 102, 0.07);
+  border: 1px solid rgba(255, 209, 102, 0.25);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  text-align: center;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.compliment-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.6;
 }
 
 /* Celebration Header */
